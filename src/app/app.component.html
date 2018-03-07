@@ -1,0 +1,17 @@
+<md-sidenav-container>
+  <!-- 滑出侧边栏 -->
+  <md-sidenav #sidenav mode="push">
+    <app-sidebar></app-sidebar>
+  </md-sidenav>
+  <div class="site">
+    <header>
+      <app-header (toggle)="sidenav.open()"></app-header>
+    </header>
+    <main>
+      
+    </main>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
+  </div>
+</md-sidenav-container>
