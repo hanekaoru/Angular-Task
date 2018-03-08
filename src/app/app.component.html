@@ -1,14 +1,14 @@
 <md-sidenav-container>
   <!-- 滑出侧边栏 -->
-  <md-sidenav #sidenav mode="push">
+  <md-sidenav #sidenav mode="side">
     <app-sidebar></app-sidebar>
   </md-sidenav>
   <div class="site">
     <header>
-      <app-header (toggle)="sidenav.open()"></app-header>
+      <app-header (toggle)="sidenav.toggle()"></app-header>
     </header>
     <main>
-      
+      <router-outlet></router-outlet>
     </main>
     <footer>
       <app-footer></app-footer>
