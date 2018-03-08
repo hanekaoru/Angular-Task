@@ -6,7 +6,9 @@ import {
   MdIconModule, 
   MdButtonModule ,
   MdCardModule,
-  MdInputModule
+  MdInputModule,
+  MdListModule,
+  MdSlideToggleModule
 } from '@angular/material'
 
 @NgModule({
@@ -16,7 +18,9 @@ import {
     MdIconModule, 
     MdButtonModule,
     MdCardModule,
-    MdInputModule
+    MdInputModule,
+    MdListModule,
+    MdSlideToggleModule
   ],
   exports: [
     CommonModule,
@@ -24,7 +28,9 @@ import {
     MdIconModule, 
     MdButtonModule,
     MdCardModule,
-    MdInputModule
+    MdInputModule,
+    MdListModule,
+    MdSlideToggleModule
   ],
   declarations: []
 })
