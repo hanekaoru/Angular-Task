@@ -5,17 +5,17 @@
     </md-card-header>
   
     <md-card-content>
-      <md-input-container>
-        <input mdInput type="text" placeholder="email">
+      <md-input-container class="full-width">
+        <input mdInput type="text" placeholder="请输入帐号">
       </md-input-container>
-      <md-input-container>
-        <input mdInput type="text" placeholder="password">
+      <md-input-container class="full-width">
+        <input mdInput type="text" placeholder="请输入密码">
       </md-input-container>
       <button md-raised-button type="button">登录</button>
     </md-card-content>
   
     <md-card-actions class="text-right">
-      <p>还没有账户？<a href="">注册</a></p>
+      <p>还没有账户？<a routerLink="/register">注册</a></p>
       <p>忘记密码？<a href="">找回</a></p>
     </md-card-actions>
   </md-card>
