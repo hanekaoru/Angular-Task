@@ -1,13 +1,18 @@
 <div md-subheader class="header-container">
+  <!-- 头部左侧标题 -->
   <div>
     <h3>{{header}}</h3>
   </div>
+
+  <!-- 中间部分 -->
   <div class="fill">
     <button md-button>
       <md-icon>add_circle_outline</md-icon>
       <span>新任务</span>
     </button>
   </div>
+
+  <!-- 右边 menu 按钮 -->
   <div>
     <button md-icon-button [mdMenuTriggerFor]="menu">
       <md-icon>keyboard_arrow_down</md-icon>
@@ -15,6 +20,7 @@
   </div>
 </div>
 
+<!-- 对应弹出的 menu -->
 <md-menu #menu="mdMenu">
   <button md-menu-item>
     <md-icon>mode_edit</md-icon>

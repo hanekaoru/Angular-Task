@@ -1,12 +1,19 @@
 <div class="task-lists">
-  <app-task-list class="list-container" *ngFor="let list of lists">
-    <app-task-header [header]="list.name"></app-task-header>
-    <app-task-item *ngFor="let task of lists.tasks">
 
+  <!-- 列表 -->
+  <app-task-list class="list-container" *ngFor="let list of lists">
+
+    <!-- 列表头部 -->
+    <app-task-header [header]="list.name"></app-task-header>
+
+    <!-- 列表内容部分 -->
+    <app-task-item *ngFor="let task of list.tasks" [item]="task">
+      
     </app-task-item>
   </app-task-list>
 </div>
 
+<!-- 右下角的按钮 -->
 <button class="fab-button" md-fab type="button" (click)="add()">
   <md-icon>add</md-icon>
 </button>
