@@ -4,7 +4,7 @@
   <app-task-list class="list-container" *ngFor="let list of lists">
 
     <!-- 列表头部 -->
-    <app-task-header [header]="list.name"></app-task-header>
+    <app-task-header [header]="list.name" (newTask)="launchNewTaskDialog()"></app-task-header>
 
     <!-- 列表内容部分 -->
     <app-task-item *ngFor="let task of list.tasks" [item]="task">
