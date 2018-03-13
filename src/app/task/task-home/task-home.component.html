@@ -11,7 +11,11 @@
     ></app-task-header>
 
     <!-- 列表内容部分 -->
-    <app-task-item *ngFor="let task of list.tasks" [item]="task">
+    <app-task-item 
+      *ngFor="let task of list.tasks" 
+      [item]="task"
+      (taskClick)="launchUpdateTaskDialog(task)"
+    >
       
     </app-task-item>
   </app-task-list>
