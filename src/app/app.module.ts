@@ -10,6 +10,8 @@ import { LoginModule } from './login/login.module';
 import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +23,8 @@ import { TaskModule } from './task/task.module';
     AppRoutingModule,
     LoginModule,
     ProjectModule,
-    TaskModule
+    TaskModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

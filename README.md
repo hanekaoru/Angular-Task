@@ -19,3 +19,5 @@ $ npm/yarn install --save @angular/material@2.0.0-beta.7
 [01、core.module.ts, flex](https://github.com/hanekaoru/Angular-Task/blob/master/note/01.md)
 
 [02、material](https://github.com/hanekaoru/Angular-Task/blob/master/note/02.md)
+
+[03、Amimation](https://github.com/hanekaoru/Angular-Task/blob/master/note/03.md)
