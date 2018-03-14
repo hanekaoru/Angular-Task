@@ -9,12 +9,15 @@ import { HttpModule } from '@angular/http'
 import { SharedModule } from '../shared/shared.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
+import { AppRoutingModule } from '../app-routing.module';
+
 
 @NgModule({
   imports: [
     SharedModule,
     HttpModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   declarations: [
     HeaderComponent, 
@@ -24,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
   exports:[
     HeaderComponent, 
     FooterComponent, 
-    SidebarComponent
+    SidebarComponent,
+    AppRoutingModule
   ]
 })
 
