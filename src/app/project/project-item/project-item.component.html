@@ -16,7 +16,7 @@
 
   <!-- 按钮组 -->
   <md-card-actions>
-    <button md-button type="button">
+    <button md-button type="button" (click)="onEditClick()">
       <md-icon>add</md-icon>
       <span>编辑</span>
     </button>
@@ -26,7 +26,7 @@
       <span>邀请</span>
     </button>
 
-    <button md-button type="button">
+    <button md-button type="button" (click)="onDelClick()">
       <md-icon>delete</md-icon>
       <span>删除</span>
     </button>

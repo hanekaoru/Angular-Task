@@ -19,7 +19,8 @@ import {
   MdNativeDateModule,
   MdRadioModule,
   MdSelectModule
-} from '@angular/material'
+} from '@angular/material';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
 
 @NgModule({
   imports: [
@@ -62,7 +63,8 @@ import {
     MdRadioModule,
     MdSelectModule
   ],
-  declarations: []
+  declarations: [ConfirmDialogComponent],
+  entryComponents: [ConfirmDialogComponent]
 })
 
 export class SharedModule { }

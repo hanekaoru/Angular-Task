@@ -8,6 +8,8 @@
       [header]="list.name" 
       (newTask)="launchNewTaskDialog()"
       (moveAll)="launchCopyTaskDialog()"
+      (delList)="launchConfirmDialog()"
+      (editlList)="launchEditListDialog()"
     ></app-task-header>
 
     <!-- 列表内容部分 -->
@@ -22,6 +24,11 @@
 </div>
 
 <!-- 右下角的按钮 -->
-<button class="fab-button" md-fab type="button" (click)="add()">
+<button 
+  class="fab-button" 
+  md-fab 
+  type="button" 
+  (click)="launchNewListDialog()"
+>
   <md-icon>add</md-icon>
 </button>
