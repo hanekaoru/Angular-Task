@@ -6,6 +6,10 @@
     'priority-emergency': item.priority === 1
   }"
   (click)="onItemClick()"
+  [app-draggable]="true"
+  [dragTag]="'task-item'"
+  [draggedClass]="'drag-start'"
+  [dragData]="item"
 >
   <!-- 选择框 -->
   <md-checkbox 
