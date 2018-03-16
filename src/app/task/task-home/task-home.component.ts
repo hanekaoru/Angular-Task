@@ -23,6 +23,7 @@ export class TaskHomeComponent implements OnInit {
     {
       id: 1,
       name: "待办",
+      order: 1,
       tasks: [
         {
           id: 1,
@@ -54,6 +55,7 @@ export class TaskHomeComponent implements OnInit {
     {
       id: 2,
       name: "进行中",
+      order: 2,
       tasks: [
         {
           id: 1,
@@ -137,6 +139,8 @@ export class TaskHomeComponent implements OnInit {
     });
   }
 
+  // srcData 为拖拽对象
+  // list 为目标对象
   handleMove(srcData, list) {
     switch (srcData.tag) {
       case 'task-item':
@@ -145,6 +149,12 @@ export class TaskHomeComponent implements OnInit {
     
       case 'task-list':
         console.log('handling list')
+        console.log(srcData)
+        console.log(list)
+        const srcList = srcData.data;
+        const tempOrder = srcList.order;
+        srcList.order = list.order;
+        list.order = tempOrder;
         break;
       default:
         break;

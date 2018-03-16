@@ -9,13 +9,16 @@ import { AppRoutingModule } from '../app-routing.module';
 
 import 'rxjs/add/operator/take';
 
+import { ServicesModule } from '../services/services.module'
+
 
 @NgModule({
   imports: [
     SharedModule,
     HttpModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServicesModule.forRoot()
   ],
   declarations: [
     HeaderComponent, 

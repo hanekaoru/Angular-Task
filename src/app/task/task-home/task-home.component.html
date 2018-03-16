@@ -12,6 +12,7 @@
     [draggedClass]="'drag-start'"
     [dragData]="list"
     (dropped)="handleMove($event, list)"
+    [ngStyle]="{'order': list.order}"
   >
 
     <!-- 列表头部 -->
