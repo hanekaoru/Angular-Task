@@ -24,6 +24,9 @@
       (editlList)="launchEditListDialog()"
     ></app-task-header>
 
+    <!-- 快速创建表单 -->
+    <app-quick-task (quickTask)="handleQuickTask($event)"></app-quick-task>
+
     <!-- 列表内容部分 -->
     <app-task-item 
       *ngFor="let task of list.tasks" 
