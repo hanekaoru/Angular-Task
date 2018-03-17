@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/tasklists', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'project', redirectTo: '/project', pathMatch: 'full' },
   { path: 'tasklists', redirectTo: '/tasklists', pathMatch: 'full' },
   
