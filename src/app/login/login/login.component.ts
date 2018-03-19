@@ -1,17 +1,29 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+import { QuoteService } from '../../services/quote.service';
+import { Quote } from '../../domain/quote.model';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
   // form 名称可以自行定义
   form: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  quote: Quote = {
+    cn: '默认值',
+    en: '默认值',
+    pic: 'assets/1.jpg'
+  }
+  constructor(
+    private fb: FormBuilder,
+    private quoteService$: QuoteService
+  ) {
+    this.quoteService$.getQuote()
+      .subscribe(q => this.quote = q)
+  }
 
   // 初始化
   ngOnInit() {

@@ -26,11 +26,13 @@
       <md-card-title>
         提示
       </md-card-title>
-      <md-card-subtitle>The life will bloom in the darkest place. by Alextrasza</md-card-subtitle>
+      <md-card-subtitle>
+        {{quote.cn}}
+      </md-card-subtitle>
     </md-card-header>
-    <img md-card-image src="/assets/1.jpg" alt="">
+    <img md-card-image [src]="quote.pic" alt="quote image">
     <md-card-content>
-        The life will bloom in the darkest place. by Alextrasza
+        {{quote.en}}
     </md-card-content>
   </md-card>
 
