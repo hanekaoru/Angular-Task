@@ -23,7 +23,8 @@ import {
   MdSelectModule,
   MdSidenavModule
 } from '@angular/material';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ImageListSelectComponent } from './image-list-select/image-list-select.component'
 
 @NgModule({
   imports: [
@@ -72,9 +73,13 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MdRadioModule,
     MdSelectModule,
     MdSidenavModule,
-    DirectiveModule
+    DirectiveModule,
+    ImageListSelectComponent
   ],
-  declarations: [ConfirmDialogComponent],
+  declarations: [
+    ConfirmDialogComponent, 
+    ImageListSelectComponent
+  ],
   entryComponents: [ConfirmDialogComponent]
 })
 

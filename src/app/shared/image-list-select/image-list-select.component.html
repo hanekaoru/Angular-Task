@@ -1,0 +1,18 @@
+<div>
+  <span>{{title}}</span>
+  <img [src]="selected" class="avatar">
+</div>
+<div class="scroll-container">
+  <md-grid-list [cols]="cols" [rowHeight]="rowHeight">
+    <md-grid-tile *ngFor="let item of items; let i = index">
+      <div class="image-container" (click)="onChange(i)">
+        <img class="avatar" [src]="item">
+        <div class="after">
+          <div class="zoom">
+            <md-icon>checked</md-icon>
+          </div>
+        </div>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
