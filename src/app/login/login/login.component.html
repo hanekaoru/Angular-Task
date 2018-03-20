@@ -7,7 +7,7 @@
     <md-card-content>
       <md-input-container class="full-width">
         <input mdInput type="text" placeholder="请输入帐号" formControlName="email">
-        <md-error>{{ form.controls['email'].errors | json }}</md-error>
+        <md-error>{{ form.controls['email'].errors.emailErrorMsg }}</md-error>
       </md-input-container>
       <md-input-container class="full-width">
         <input mdInput type="text" placeholder="请输入密码" formControlName="password">

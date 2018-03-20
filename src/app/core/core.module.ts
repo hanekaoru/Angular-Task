@@ -7,10 +7,10 @@ import { SharedModule } from '../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
 
-import 'rxjs/add/operator/take';
-
 import { ServicesModule } from '../services/services.module'
 
+import 'rxjs/add/operator/take';
+import '../utils/debug.util';
 
 @NgModule({
   imports: [

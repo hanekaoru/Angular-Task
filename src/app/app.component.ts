@@ -9,7 +9,7 @@ import { OverlayContainer } from '@angular/material';
 export class AppComponent {
 
   constructor(private oc: OverlayContainer, @Inject('BASE_CONFIG') config) {
-    console.log(config)
+    
   }
 
   public darkTheme = false;
