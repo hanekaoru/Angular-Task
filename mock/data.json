@@ -1,4 +1,20 @@
 {
+  "projects": [
+    {
+      "id": "1",
+      "name": "张三",
+      "desc": "内部项目",
+      "coverImg": "assets/1.jpg",
+      "members": ["1", "2"]
+    },
+    {
+      "id": "2",
+      "name": "李四",
+      "desc": "外部项目",
+      "coverImg": "assets/1.jpg",
+      "members": ["1"]
+    }
+  ],
   "quotes": [
     {
       "id": "0",
