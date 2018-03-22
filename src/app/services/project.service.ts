@@ -42,7 +42,8 @@ export class ProjectService {
 
   // 删除列表 delete
   del(project: Project): Observable<Project> {
-    const delTasks$ = Observable.from(project.taskList)
+    // 新建的 project 的 taskList 是没有的，为 undefined
+    const delTasks$ = Observable.from(project.taskList ? project.taskList : [])
       .mergeMap(listId => this.http.delete(`${this.config.uri}/taskLists/${listId}`))
       // 统计流中的值，最后输出一个值
       .count()
