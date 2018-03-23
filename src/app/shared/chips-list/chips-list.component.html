@@ -1,0 +1,8 @@
+<div [formGroup]="form">
+  <span>{{label}}</span>
+  <md-chip-list>
+    <md-chip *ngFor="let member of items" selected="true" color="primary">
+      {{member.name}} <span class="remove-tag" (click)="removeMember(member) ">x</span>
+    </md-chip>
+  </md-chip-list>
+</div>

@@ -5,11 +5,13 @@ import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
 import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
-import { SharedModule } from './shared/shared.module'
+import { SharedModule } from './shared/shared.module';
+import { ChipsListComponent } from './shard/chips-list/chips-list.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChipsListComponent
   ],
   imports: [
     BrowserModule,

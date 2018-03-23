@@ -26,7 +26,8 @@ import {
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
-import { AgeInputComponent } from './age-input/age-input.component'
+import { AgeInputComponent } from './age-input/age-input.component';
+import { ChipsListComponent } from './chips-list/chips-list.component'
 
 @NgModule({
   imports: [
@@ -84,7 +85,8 @@ import { AgeInputComponent } from './age-input/age-input.component'
   declarations: [
     ConfirmDialogComponent, 
     ImageListSelectComponent, 
-    AgeInputComponent
+    AgeInputComponent, 
+    ChipsListComponent
   ],
   entryComponents: [ConfirmDialogComponent]
 })
