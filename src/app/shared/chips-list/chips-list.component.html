@@ -5,4 +5,21 @@
       {{member.name}} <span class="remove-tag" (click)="removeMember(member) ">x</span>
     </md-chip>
   </md-chip-list>
+  <md-input-container class="full-width" *ngIf="displayInput">
+    <input 
+      type="text" 
+      mdInput 
+      [placeholder]="placeholderText"
+      [mdAutoComplete]="aotoMember"
+      formControlName="memberSearch"
+    >
+  </md-input-container>
 </div>
+
+<md-autocomplete #autoMember="mdAutocomplete" [displayWith]="displayUser">
+  <md-option
+    *ngFor="let item of memberRestlts$ | async"
+    [value]="item"
+    (onSelectionChange)="handleMembersSelection(item)"
+  >{{item.name}}</md-option>
+</md-autocomplete>
