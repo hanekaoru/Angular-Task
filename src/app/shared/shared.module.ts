@@ -22,7 +22,8 @@ import {
   MdRadioModule,
   MdSelectModule,
   MdSidenavModule,
-  MdButtonToggleModule
+  MdButtonToggleModule,
+  MdChipsModule
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
@@ -49,11 +50,12 @@ import { ChipsListComponent } from './chips-list/chips-list.component'
     MdTooltipModule,
     MdDatepickerModule,
     MdNativeDateModule,
+    MdButtonToggleModule,
     MdRadioModule,
     MdSelectModule,
     MdSidenavModule,
     DirectiveModule,
-    MdButtonToggleModule
+    MdChipsModule
   ],
   exports: [
     CommonModule,
@@ -80,7 +82,9 @@ import { ChipsListComponent } from './chips-list/chips-list.component'
     DirectiveModule,
     ImageListSelectComponent,
     AgeInputComponent,
-    MdButtonToggleModule
+    MdButtonToggleModule,
+    ChipsListComponent,
+    MdChipsModule
   ],
   declarations: [
     ConfirmDialogComponent, 

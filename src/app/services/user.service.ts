@@ -18,6 +18,7 @@ export class UserService {
   ) {}
 
   // 添加成员时候的提示
+  // 得到一个字符串，然后去匹配 email 中的值
   serachUsers(filter: string): Observable<User[]> {
     const uri = `${this.config.uri}/${this.domain}`;
     return this.http

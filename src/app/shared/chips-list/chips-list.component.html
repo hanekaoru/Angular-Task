@@ -2,7 +2,7 @@
   <span>{{label}}</span>
   <md-chip-list>
     <md-chip *ngFor="let member of items" selected="true" color="primary">
-      {{member.name}} <span class="remove-tag" (click)="removeMember(member) ">x</span>
+      {{member.email}} <span class="remove-tag" (click)="removeMember(member) ">x</span>
     </md-chip>
   </md-chip-list>
   <md-input-container class="full-width" *ngIf="displayInput">
@@ -10,7 +10,7 @@
       type="text" 
       mdInput 
       [placeholder]="placeholderText"
-      [mdAutoComplete]="aotoMember"
+      [mdAutocomplete]="autoMember"
       formControlName="memberSearch"
     >
   </md-input-container>
@@ -21,5 +21,5 @@
     *ngFor="let item of memberRestlts$ | async"
     [value]="item"
     (onSelectionChange)="handleMembersSelection(item)"
-  >{{item.name}}</md-option>
+  >{{item.email}}</md-option>
 </md-autocomplete>
