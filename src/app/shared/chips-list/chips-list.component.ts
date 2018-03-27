@@ -37,6 +37,9 @@ export class ChipsListComponent implements ControlValueAccessor {
   @Input() label = '添加/修改成员';
   form: FormGroup;
   items: User[] = [];
+
+  // 利用 async pipe
+  // 直接在本地定义一个流
   memberRestlts$: Observable<User[]>;
 
 
@@ -52,6 +55,8 @@ export class ChipsListComponent implements ControlValueAccessor {
       memberSearch: ['']
     })
 
+    // 然后让本地这个流等于我们组合后的流，然后在 html 模版当中便可以直接使用
+    // 不需要再去什么声明一个变量，来等于 subscribe 的值等操作
     // 通过输入来得到一系列提示的值（流），这里通过 valueChanges 来获取
     this.memberRestlts$ = this.form.get('memberSearch').valueChanges
 
