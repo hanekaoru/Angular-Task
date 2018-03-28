@@ -151,7 +151,7 @@ export class IdentityInputComponent implements OnInit, OnDestroy, ControlValueAc
       return {idInvalid: true}
     }
     const pattern = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}[x0-9]$/
-    return pattern.test(val) ? null : {idNotVaild: true}
+    return pattern.test(val) ? null : {idNotValid: true}
   }
 
   // 验证护照
@@ -161,14 +161,14 @@ export class IdentityInputComponent implements OnInit, OnDestroy, ControlValueAc
       return {idInvalid: true}
     }
     const pattern = /^[GgEe]\d{8}$/
-    return pattern.test(val) ? null : {idNotVaild: true}
+    return pattern.test(val) ? null : {idNotValid: true}
   }
 
   // 验证军官证
   validateMilitay(c: FormControl): {[key: string]: any} {
     const val = c.value.identityNo;
     const pattern = /[\u4e00-\u9fa5](字第)(\d{4,8})(号?)$/
-    return pattern.test(val) ? null : {idNotVaild: true}
+    return pattern.test(val) ? null : {idNotValid: true}
   }
 
 

@@ -1,43 +1,55 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form, $event)">
     <md-card>
-      <md-card-header>
-        <md-card-title>注册：</md-card-title>
-      </md-card-header>
+      <md-tab-group>
+        <md-tab label="帐号信息">
+          <md-card-header>
+            <md-card-title>注册：</md-card-title>
+          </md-card-header>
+        
+          <!-- 表单输入 -->
+          <md-card-content>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="请输入帐号" formControlName="email">
+            </md-input-container>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="请输入姓名" formControlName="name">
+            </md-input-container>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="请输入密码" formControlName="password">
+            </md-input-container>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="再次输入密码" formControlName="repeat">
+            </md-input-container>
     
-      <!-- 表单输入 -->
-      <md-card-content>
-        <md-input-container class="full-width">
-          <input mdInput type="text" placeholder="请输入帐号" formControlName="email">
-        </md-input-container>
-        <md-input-container class="full-width">
-          <input mdInput type="text" placeholder="请输入姓名" formControlName="name">
-        </md-input-container>
-        <md-input-container class="full-width">
-          <input mdInput type="text" placeholder="请输入密码" formControlName="password">
-        </md-input-container>
-        <md-input-container class="full-width">
-          <input mdInput type="text" placeholder="再次输入密码" formControlName="repeat">
-        </md-input-container>
+            <!-- 选择头像 -->
+            <app-image-list-select
+              [cols]="6"
+              [items]="items"
+              formControlName="avatar"
+            >
+            </app-image-list-select>
+            
+            <!-- 按钮 -->
+            <button md-raised-button type="submit">注册</button>
+          </md-card-content>
+        
+          <md-card-actions class="text-right">
+            <p>还没有登录？<a routerLink="/login">登录</a></p>
+            <p>忘记密码？<a href="">找回</a></p>
+          </md-card-actions>
 
-        <!-- 选择头像 -->
-        <app-image-list-select
-          [cols]="6"
-          [items]="items"
-          formControlName="avatar"
-        >
-        </app-image-list-select>
-
-        <!-- 身份选择 -->
-        <!-- <app-age-input formControlName="dateOfBirth"></app-age-input> -->
-
-        <!-- 按钮 -->
-        <button md-raised-button type="submit">注册</button>
-      </md-card-content>
-    
-      <md-card-actions class="text-right">
-        <p>还没有登录？<a routerLink="/login">登录</a></p>
-        <p>忘记密码？<a href="">找回</a></p>
-      </md-card-actions>
+        </md-tab>
+        <md-tab label="个人信息">
+          <div class="full-width">
+            <app-identity-input formControlName="identity"></app-identity-input>
+          </div>
+          <div class="full-width">
+            <app-age-input formControlName="dateOfBirth"></app-age-input>
+          </div>
+          <div class="full-width">
+            <app-area-list formControlName="address"></app-area-list>
+          </div>
+        </md-tab>
+      </md-tab-group>
     </md-card>
-  
   </form>

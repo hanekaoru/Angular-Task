@@ -23,7 +23,8 @@ import {
   MdSelectModule,
   MdSidenavModule,
   MdButtonToggleModule,
-  MdChipsModule
+  MdChipsModule,
+  MdTabsModule
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
@@ -57,7 +58,8 @@ import { AreaListComponent } from './area-list/area-list.component'
     MdSelectModule,
     MdSidenavModule,
     DirectiveModule,
-    MdChipsModule
+    MdChipsModule,
+    MdTabsModule
   ],
   exports: [
     CommonModule,
@@ -86,7 +88,10 @@ import { AreaListComponent } from './area-list/area-list.component'
     AgeInputComponent,
     MdButtonToggleModule,
     ChipsListComponent,
-    MdChipsModule
+    MdChipsModule,
+    IdentityInputComponent, 
+    AreaListComponent,
+    MdTabsModule
   ],
   declarations: [
     ConfirmDialogComponent, 
