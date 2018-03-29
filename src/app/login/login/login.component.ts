@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { QuoteService } from '../../services/quote.service';
 import { Quote } from '../../domain/quote.model';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store'
+import * as fromRoot from '../../reducers'
+import * as actions from '../../actions/quote.action'
 
 @Component({
   selector: 'app-login',
@@ -12,17 +16,21 @@ export class LoginComponent implements OnInit {
 
   // form 名称可以自行定义
   form: FormGroup;
-  quote: Quote = {
-    cn: '默认值',
-    en: '默认值',
-    pic: 'assets/1.jpg'
-  }
+  quote$;
+
+  // 把 store 注入进来
   constructor(
     private fb: FormBuilder,
-    private quoteService$: QuoteService
+    private quoteService$: QuoteService,
+    private store$: Store<fromRoot.State>
   ) {
+    // store 可以去发射信号，也可以去取得最新的状态
+    this.quote$ = this.store$.select(fromRoot.getQuote)
+
     this.quoteService$.getQuote()
-      .subscribe(q => this.quote = q)
+      .subscribe(q => {
+        this.store$.dispatch(new actions.LoadSuccessAction(q))
+      })
   }
 
   // 初始化

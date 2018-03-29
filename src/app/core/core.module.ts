@@ -12,12 +12,16 @@ import { ServicesModule } from '../services/services.module'
 import 'rxjs/add/operator/take';
 import '../utils/debug.util';
 
+// 导入 redux
+import { AppStoreModule } from '../reducers'
+
 @NgModule({
   imports: [
     SharedModule,
     HttpModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    AppStoreModule,
     ServicesModule.forRoot()
   ],
   declarations: [
