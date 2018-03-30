@@ -1,14 +1,14 @@
-import { AppPage } from './app.po';
+import { TaskMgrPage } from './app.po';
 
-describe('task App', () => {
-  let page: AppPage;
+describe('taskmgr App', () => {
+  let page: TaskMgrPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new TaskMgrPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toContain('企业协作平台');
   });
 });

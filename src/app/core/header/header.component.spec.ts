@@ -1,16 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from '../../reducers';
+import { MdSlideToggleModule, MdToolbarModule } from '@angular/material';
+import { HeaderComponent } from './';
 
-import { HeaderComponent } from './header.component';
-
-describe('HeaderComponent', () => {
+describe('测试顶部组件：HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [HeaderComponent],
+      imports: [
+        StoreModule.provideStore(reducer),
+        MdToolbarModule,
+        MdSlideToggleModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +26,12 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('组件应该被创建', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('组件模板的元素应该被正确创建', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('span').innerText).toContain('企业协作平台');
   });
 });

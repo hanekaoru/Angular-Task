@@ -1,28 +1,33 @@
-import { city_data } from './area.data'
+import { city_data } from './area.data';
 
 export const getProvinces = () => {
   const provinces = [];
   for (const province in city_data) {
-    provinces.push(province);
+    if (province) {
+      provinces.push(province);
+    }
   }
-  return provinces;
-}
+  return [...provinces];
+};
 
 export const getCitiesByProvince = (province: string) => {
   if (!province || !city_data[province]) {
     return [];
   }
-  const cities = [];
-  const val = city_data[province];
-  for (const city in val) {
-    cities.push(city);
+  const cities = city_data[province];
+  const citiesByProvice = [];
+  for (const city in cities) {
+    if (city) {
+      citiesByProvice.push(city);
+    }
   }
-  return cities;
-}
+  return [...citiesByProvice];
+};
 
-export const getAreaByCity = (province: string, city: string) => {
-  if (!province || !city_data[province] || !city_data[province][city]) {
+export const getAreasByCity = (province: string, city: string) => {
+  if (!province || !city || !city_data[province][city]) {
     return [];
   }
-  return city_data[province][city];
-}
+  const areas = city_data[province][city];
+  return [...areas];
+};

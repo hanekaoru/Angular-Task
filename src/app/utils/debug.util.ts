@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs/Observable'
-import { environment } from '../../environments/environment.prod';
+import { Observable } from 'rxjs/Observable';
+import { environment } from '../../environments/environment';
 
 declare module 'rxjs/Observable' {
   interface Observable<T> {
@@ -7,8 +7,7 @@ declare module 'rxjs/Observable' {
   }
 }
 
-Observable.prototype.debug = function(message: string) {
-  
+Observable.prototype.debug = function (message: string) {
   return this.do(
     (next) => {
       if (!environment.production) {
@@ -17,7 +16,7 @@ Observable.prototype.debug = function(message: string) {
     },
     (err) => {
       if (!environment.production) {
-        console.log('ERROR>> ', message, err);
+        console.error('ERROR>>>', message, err);
       }
     },
     () => {
@@ -25,5 +24,5 @@ Observable.prototype.debug = function(message: string) {
         console.log('Completed - ');
       }
     }
-  )
-}
+  );
+};

@@ -1,36 +1,17 @@
-<md-list-item class="container"
-  [@item]="widthAnim"
-  [ngClass]="{
+<md-list-item class="container" [@item]="widerPriority" [app-draggable]="true" [dragTag]="'task-item'" [draggedClass]="'drag-start'"
+  [dragData]="item" [ngClass]="{
     'priority-normal': item.priority === 3,
     'priority-important': item.priority === 2,
-    'priority-emergency': item.priority === 1
-  }"
-  (click)="onItemClick()"
-  [app-draggable]="true"
-  [dragTag]="'task-item'"
-  [draggedClass]="'drag-start'"
-  [dragData]="item"
->
-  <!-- 选择框 -->
-  <md-checkbox 
-    class="completion-status" 
-    [checked]="item.completed"
-    (click)="onCheckBoxClick($event)"
-  ></md-checkbox>
-
-  <!-- 标题 -->
-  <div md-line class="content" [ngClass]="{'completed': item.completed}">
-    <span [md-tooltip]="item.desc">{{item.desc}}</span>
+    'priority-emergency': item.priority === 1}" (click)="itemClicked($event)">
+  <md-checkbox class="status" [checked]="item.completed" (click)="onCheckboxClick($event)" (change)="checkboxChanged()">
+  </md-checkbox>
+  <div md-line [md-tooltip]="item.desc" class="content" [ngClass]="{'completed': item.completed}">
+    {{item.desc}}
   </div>
-
-  <!-- 日期 -->
   <div md-line class="bottom-bar">
-    <span class="due-data" *ngIf="item.dueDate">
-      {{item.dueDate | date: "yyyy-MM-dd"}}
-    </span>
-    <md-icon class="bottom-bar-icon" *ngIf="item.reminder">alarm</md-icon>
+    <span class="duedate" *ngIf="item.dueDate">{{item.dueDate | date:"yy-MM-dd"}}</span>
+    <md-icon *ngIf="item.reminder" class="alarm">alarm</md-icon>
   </div>
+  <md-icon md-list-avatar class="avatar" [svgIcon]="avatar"></md-icon>
 
-  <!-- 头像 -->
-  <md-icon class="avatar" md-list-avatar>account_circle</md-icon>
 </md-list-item>
