@@ -1,9 +1,5 @@
 ## Angular Task
 
-`Angular 4.x` 搭建的一个企业级协作平台
-
-跟着学习一些 `Angular` 高阶知识，记录一些相关笔记
-
 笔记以及开发过程中遇到的相关问题汇总见：[Angular-Task](https://github.com/hanekaoru/WebLearningNotes/tree/master/angular#angular-task)
 
 ----
